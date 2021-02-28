@@ -20,7 +20,7 @@
 
     <header>
         <div class="container header">
-            <a href="./index.html" class="logo">Web<span>Studio</span></a>
+            <a href="./index.html" class="logo head">Web<span>Studio</span></a>
             <nav>
                 <ul class="site-nav"> 
                     <li class="item"><a href="./index.html" class="link current">Студия</a></li>
@@ -41,7 +41,7 @@
         <section class="prim-section">
             <div class="container prim">
                 <h1 class="title-index">Эффективные решения<br> для вашего бизнеса</h1>
-                <a href="#" class="link-prim-section">Заказать услугу</a>
+                <a href="#" class="link-prim-section" data-modal-open>Заказать услугу</a>
             </div>
         </section>
 
@@ -79,9 +79,12 @@
             <div class="container doing">
                 <h2 class="title-doing">Чем мы занимаемся</h2>
                 <ul class="doing-list">
-                    <li><img src="./images/box-1.jpg" alt="Набор текста" width="370"></li>
-                    <li><img src="./images/box-2.jpg" alt="Мобильная версия" width="370"></li>
-                    <li><img src="./images/box-3.jpg" alt="Дизайн" width="370"></li>
+                    <li><div class="doing-thumb"><img src="./images/box-1.jpg" alt="Набор текста" width="370">
+                    <p>ДЕСКТОПНЫЕ ПРИЛОЖЕНИЯ</p></div></li>
+                    <li><div class="doing-thumb"><img src="./images/box-2.jpg" alt="Мобильная версия" width="370">
+                        <p>МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</p></div></li>
+                    <li><div class="doing-thumb"><img src="./images/box-3.jpg" alt="Дизайн" width="370">
+                        <p>ДИЗАЙНЕРСКИЕ РЕШЕНИЯ</p></div></li>
                 </ul>
             </div>
         </section>
@@ -195,5 +198,15 @@
     </div>
         </div>
     </footer>
+     <!-- Вся твоя разметка, включая разметку модалки -->
+     <div class="backdrop is-hidden" data-modal>
+         <div class="modal">
+             <button data-modal-close class="mdodal-btn"><svg  width="30" height="30"><use href="./images/symbol-defs.svg#icon-close"></use></svg></button>
+         </div>
+
+     </div>
+
+  <!-- Ставим перед закрывающим тегом body -->
+  <script src="./js/modal.js"></script>
 </body>
 </html>

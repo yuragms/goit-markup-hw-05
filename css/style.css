@@ -76,6 +76,7 @@ body {
   font-size: 26px;
   line-height: 1.19;
 }
+
 span {
   color: var(--primary-black-color);
 }
@@ -83,6 +84,8 @@ span {
   margin-left: 93px;
 }
 .site-nav .link {
+  position: relative;
+
   display: block;
   color: var(--primary-title-text-color);
   font-weight: 500;
@@ -101,10 +104,22 @@ span {
 .site-nav li:not(:last-child) {
   margin-right: 50px;
 }
+
+.site-nav .link.current::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #2196f3;
+  position: absolute;
+  left: 0;
+  bottom: -32px;
+  border-radius: 2px;
+}
+
 .auth-nav {
   margin-left: auto;
 }
-
 .auth-nav .link {
   display: block;
   color: var(--primary-text-color);
@@ -177,6 +192,42 @@ span {
   text-align: center;
   padding: 10px 32px;
   border-radius: 4px;
+}
+/* modal window*/
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 582px;
+  height: 581px;
+
+  background-color: var(--primary-white-color);
+}
+
+.mdodal-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background: var(--primary-white-color);
 }
 
 /* advantage*/
@@ -260,6 +311,29 @@ span {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.doing-thumb {
+  position: relative;
+}
+
+.doing-list p {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.17;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+  background: rgba(47, 48, 58, 0.8);
+
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  text-align: center;
 }
 
 /* Comand*/
@@ -566,4 +640,27 @@ a {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+
+.work-thumb {
+  position: relative;
+}
+
+.work-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(33, 150, 243, 0.9);
+}
+.work-overlay p {
+  width: 370px;
+  height: 294px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+  color: var(--primary-white-color);
 }
